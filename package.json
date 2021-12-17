@@ -1,0 +1,19 @@
+{
+  "name": "stonework",
+  "version": "1.0",
+  "description": "Insert something explaining what stonework does",
+  "main": "src/stonework.js",
+  "files": [
+    "src/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js1300/stonework.git"
+  },
+  "author": "Jonathan Simmonds",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/js1300/stonework/issues"
+  },
+  "homepage": "https://github.com/js1300/stonework#readme"
+}
