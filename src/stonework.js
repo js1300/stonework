@@ -1,5 +1,7 @@
 class Stonework {
   // TODO: add minimum frame width, frame border width and transition time properties
+  // ^find out about constructor overrides (versions with and without transition time - which will default to zero)
+  // ^^actually, frame border width can be the same too, the only one that doesn't make sense is the minimum frame width
   constructor() {
     this.minimumFrameWidth = 250;
     this.frameBorderWidth = 16;
@@ -8,7 +10,7 @@ class Stonework {
 
     this.applyStyling();
     window.onload = this.gatherAndPositionFrames(true);
-    window.addEventListener("resize", this.positionFrames);
+    window.addEventListener("resize", this.positionFrames.bind(this));
   }
 
   applyStyling() {
@@ -48,6 +50,7 @@ class Stonework {
       if (frameElement.dataset.width && frameElement.dataset.height) {
         this.loadedFrameElements.push(frameElement);
   
+        // TODO: change this to check if transition time is greater than zero
         if (frameElement.dataset.hex_colour) {
           frameElement.style.backgroundColor = frameElement.dataset.hex_colour;
           photoElement = frameElement.firstElementChild;
@@ -66,8 +69,9 @@ class Stonework {
         frameElement.dataset.height = frameElement.firstElementChild.naturalHeight;
         this.loadedFrameElements.push(frameElement);
       } else if (primaryExecution) {
+        var self = this;
         frameElements[i].firstElementChild.onload = function () {
-          this.gatherAndPositionFrames(false);
+          self.gatherAndPositionFrames(false);
         };
       }
     }
