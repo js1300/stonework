@@ -1,10 +1,8 @@
 class Stonework {
-  // TODO: add minimum frame width, frame border width and transition time properties
-  // ^find out about constructor overrides (versions with and without transition time - which will default to zero)
-  // ^^actually, frame border width can be the same too, the only one that doesn't make sense is the minimum frame width
-  constructor() {
-    this.minimumFrameWidth = 250;
-    this.frameBorderWidth = 16;
+  // TODO: introduce transition time for the CSS transition
+  constructor(minimum_frame_width, frame_border_width = 0) {
+    this.minimumFrameWidth = minimum_frame_width;
+    this.frameBorderWidth = frame_border_width;
     this.galleryElement = document.getElementsByClassName("gallery")[0];
     this.loadedFrameElements = [];
 
@@ -69,6 +67,7 @@ class Stonework {
         frameElement.dataset.height = frameElement.firstElementChild.naturalHeight;
         this.loadedFrameElements.push(frameElement);
       } else if (primaryExecution) {
+        // TODO: sort out the linting issue with this
         var self = this;
         frameElements[i].firstElementChild.onload = function () {
           self.gatherAndPositionFrames(false);
