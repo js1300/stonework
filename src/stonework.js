@@ -43,6 +43,7 @@ class Stonework {
   
     frameElements = this.galleryElement.children;
   
+    let self = this;
     for (i = 0; i < frameElements.length; i+= 1) {
       frameElement = frameElements[i];
       if (frameElement.dataset.width && frameElement.dataset.height) {
@@ -54,7 +55,6 @@ class Stonework {
           if (!photoElement.complete) {
             photoElement.style.visibility = "hidden";
             photoElement.style.opacity = "0";
-            var self = this;
             photoElement.onload = function () {
               this.style.visibility = "visible";
               this.style.opacity = "1";
@@ -67,8 +67,6 @@ class Stonework {
         frameElement.dataset.height = frameElement.firstElementChild.naturalHeight;
         this.loadedFrameElements.push(frameElement);
       } else if (primaryExecution) {
-        // TODO: sort out the linting issue with this
-        var self = this;
         frameElements[i].firstElementChild.onload = function () {
           self.gatherAndPositionFrames(false);
         };
