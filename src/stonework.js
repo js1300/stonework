@@ -1,9 +1,9 @@
 class Stonework {
   // TODO: introduce transition time for the CSS transition
-  constructor(minimum_frame_width, frame_border_width = 0) {
+  constructor(gallery_element_id, minimum_frame_width, frame_border_width = 0) {
+    this.galleryElement = document.getElementById(gallery_element_id);
     this.minimumFrameWidth = minimum_frame_width;
     this.frameBorderWidth = frame_border_width;
-    this.galleryElement = document.getElementsByClassName("gallery")[0];
     this.loadedFrameElements = [];
 
     this.applyStyling();
