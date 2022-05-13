@@ -1,9 +1,9 @@
 class Stonework {
-  // TODO: introduce transition time for the CSS transition
-  constructor(gallery_element_id, minimum_frame_width, frame_border_width = 0) {
+  constructor(gallery_element_id, minimum_frame_width, frame_border_width = 0, transition_time = 0.5) {
     this.galleryElement = document.getElementById(gallery_element_id);
     this.minimumFrameWidth = minimum_frame_width;
     this.frameBorderWidth = frame_border_width;
+    this.transitionTime = transition_time;
     this.loadedFrameElements = [];
 
     this.applyStyling();
@@ -48,17 +48,17 @@ class Stonework {
       if (frameElement.dataset.width && frameElement.dataset.height) {
         this.loadedFrameElements.push(frameElement);
   
-        // TODO: change this to check if transition time is greater than zero
-        if (frameElement.dataset.hex_colour) {
+        if (frameElement.dataset.hex_colour && this.transitionTime > 0) {
           frameElement.style.backgroundColor = frameElement.dataset.hex_colour;
           photoElement = frameElement.firstElementChild;
           if (!photoElement.complete) {
             photoElement.style.visibility = "hidden";
             photoElement.style.opacity = "0";
+            var self = this;
             photoElement.onload = function () {
               this.style.visibility = "visible";
               this.style.opacity = "1";
-              this.style.transition = "opacity 0.5s linear";
+              this.style.transition = "opacity " + self.transitionTime + "s linear";
             };
           }
         }
