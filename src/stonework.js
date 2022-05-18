@@ -181,8 +181,7 @@ class Stonework {
   
     frameWidthSum = frameWidthArray.reduce((a, b) => a + b, 0);
     if (frameWidthSum != availableWidth) {
-      // TODO: double check the output of this
-      frameWidthArray[frameWidthArray.length * Math.random | 0] += availableWidth - frameWidthSum;
+      frameWidthArray[frameWidthArray.length * Math.random() | 0] += availableWidth - frameWidthSum;
     }
   
     rowOffsetX = 0;
