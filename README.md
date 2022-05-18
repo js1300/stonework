@@ -9,3 +9,7 @@ Install `stonework` via [NPM](https://www.npmjs.com):
 Import the stonework library:
 
 `import Stonework from 'stonework'`
+
+TODO: explain this next step
+
+`new Stonework("gallery", 250, 16);`
