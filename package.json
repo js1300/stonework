@@ -1,7 +1,7 @@
 {
   "name": "stonework",
   "version": "1.0",
-  "description": "Insert something explaining what stonework does",
+  "description": "Arranges images intelligently based on available width and aspect ratios.",
   "main": "src/stonework.js",
   "files": [
     "src/**/*"
