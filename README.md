@@ -1,4 +1,4 @@
-![cover.png](examples/images/cover.png)
+![cover.jpg](examples/images/cover.jpg)
 
 # Introduction
 
