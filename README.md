@@ -1,16 +1,18 @@
+# Stonework
+
 ![cover.jpg](examples/images/cover.jpg)
 
-# Introduction
+## Introduction
 
 Stonework is a lightweight vanilla JavaScript library for arranging images in a masonry row type layout.
 
-# Installation
+## Installation
 
 Install `stonework` via [NPM](https://www.npmjs.com):
 
 `npm install stonework`
 
-# Usage
+## Usage
 
 Import the stonework library:
 
@@ -20,7 +22,7 @@ Create a new instance of Stonework:
 
 `new Stonework(gallery_element_id, minimum_frame_width, frame_border_width, transition_time);`
 
-## Arguments
+### Arguments
 
 `gallery_element_id` (string) - the id of a div element with a gallery structure
 
@@ -30,7 +32,7 @@ Create a new instance of Stonework:
 
 `transition_time` [optional] (float) - the length, in seconds, of the CSS transistion animation from solid colour to loaded image
 
-## Gallery structure
+### Gallery structure
 
 Just like in real life, photos are placed in frames that are hung in galleries:
 
@@ -49,7 +51,7 @@ Just like in real life, photos are placed in frames that are hung in galleries:
 </div>
 ```
 
-## Dataset properties
+### Dataset properties
 
 `data-width` (integer) - the width of the photo, if supplied (along with `data-height`) this value will be used to arrange the layout rather than waiting for the image to load
 
