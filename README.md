@@ -20,7 +20,7 @@ Create a new instance of Stonework:
 
 ## Arguments
 
-`gallery_element_id` (string) - the id of a div element with a gallery layout
+`gallery_element_id` (string) - the id of a div element with a gallery structure
 
 `minimum_frame_width` (integer) - the minimum width, in pixels, that a frame should be displayed
 
@@ -28,7 +28,7 @@ Create a new instance of Stonework:
 
 `transition_time` [optional] (float) - the length, in seconds, of the CSS transistion animation from solid colour to loaded image
 
-## Gallery layout
+## Gallery structure
 
 Just like in real life, photos are placed in frames that are hung in galleries:
 
@@ -46,3 +46,11 @@ Just like in real life, photos are placed in frames that are hung in galleries:
   </div>
 </div>
 ```
+
+## Dataset properties
+
+`data-width` (integer) - the width of the photo, if supplied (along with `data-height`) this value will be used to arrange the layout rather than waiting for the image to load
+
+`data-height` (integer) - the height of the photo, if supplied (along with `data-width`) this value will be used to arrange the layout rather than waiting for the image to load
+
+`data-hex_colour` (string) - when the layout is arranged before waiting for the image to load, this will be the background colour of the frame
