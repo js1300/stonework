@@ -1,3 +1,5 @@
+![cover.png](examples/images/cover.png)
+
 # Introduction
 
 Stonework is a lightweight vanilla JavaScript library for arranging images in a masonry row type layout.
