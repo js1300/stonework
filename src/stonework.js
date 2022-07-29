@@ -24,7 +24,7 @@ class Stonework {
       frameElement = frameElements[i];
       frameElement.style.position = "absolute";
   
-      photoElement = frameElement.firstElementChild;
+      photoElement = frameElement.querySelector("img:first-of-type");
       photoElement.style.width = "100%";
       photoElement.style.height = "100%";
       photoElement.style.objectFit = "fill";
@@ -51,7 +51,7 @@ class Stonework {
   
         if (frameElement.dataset.hex_colour && this.transitionTime > 0) {
           frameElement.style.backgroundColor = frameElement.dataset.hex_colour;
-          photoElement = frameElement.firstElementChild;
+          photoElement = frameElement.querySelector("img:first-of-type");
           if (!photoElement.complete) {
             photoElement.style.visibility = "hidden";
             photoElement.style.opacity = "0";
@@ -62,12 +62,12 @@ class Stonework {
             };
           }
         }
-      } else if (frameElement.firstElementChild.complete) {
-        frameElement.dataset.width = frameElement.firstElementChild.naturalWidth;
-        frameElement.dataset.height = frameElement.firstElementChild.naturalHeight;
+      } else if (frameElement.querySelector("img:first-of-type").complete) {
+        frameElement.dataset.width = frameElement.querySelector("img:first-of-type").naturalWidth;
+        frameElement.dataset.height = frameElement.querySelector("img:first-of-type").naturalHeight;
         this.loadedFrameElements.push(frameElement);
       } else if (primaryExecution) {
-        frameElements[i].firstElementChild.onload = function () {
+        frameElements[i].querySelector("img:first-of-type").onload = function () {
           self.gatherAndPositionFrames(false);
         };
       }
