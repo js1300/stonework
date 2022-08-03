@@ -1,4 +1,4 @@
-class Stonework {
+class StoneworkGallery {
   constructor(gallery_element_id, minimum_frame_width, frame_border_width = 0, transition_time = 0.5) {
     this.galleryElement = document.getElementById(gallery_element_id);
     this.minimumFrameWidth = minimum_frame_width;
@@ -201,5 +201,5 @@ class Stonework {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = Stonework;
+  module.exports = StoneworkGallery;
 }
