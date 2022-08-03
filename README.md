@@ -14,15 +14,19 @@ Install `stonework` via [NPM](https://www.npmjs.com):
 
 ## Usage
 
-Import the stonework library:
+### Lightbox
 
-`import Stonework from 'stonework'`
+### Gallery
 
-Create a new instance of Stonework:
+Import stonework gallery the stonework library:
 
-`new Stonework(gallery_element_id, minimum_frame_width, frame_border_width, transition_time);`
+`import StoneworkGallery from 'stonework/src/stonework_gallery.js'`
 
-### Arguments
+Create a new instance of StoneworkGallery:
+
+`new StoneworkGallery(gallery_element_id, minimum_frame_width, frame_border_width, transition_time);`
+
+#### Arguments
 
 `gallery_element_id` (string) - the id of a div element with a gallery structure
 
@@ -32,7 +36,7 @@ Create a new instance of Stonework:
 
 `transition_time` [optional] (float) - the length, in seconds, of the CSS transistion animation from solid colour to loaded image
 
-### Gallery structure
+#### Gallery structure
 
 Just like in real life, photos are placed in frames that are hung in galleries:
 
@@ -51,7 +55,7 @@ Just like in real life, photos are placed in frames that are hung in galleries:
 </div>
 ```
 
-### Dataset properties
+#### Dataset properties
 
 `data-width` (integer) - the width of the photo, if supplied (along with `data-height`) this value will be used to arrange the layout rather than waiting for the image to load
 
